@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'career__guidance',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Kithani2001@@',
+        'PASSWORD': '',
         'PORT': 3306
     }
 }
