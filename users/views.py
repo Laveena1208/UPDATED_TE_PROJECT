@@ -133,22 +133,28 @@ def after10result(request):
         # print(user.password)
         countResult=Result10Count(username=username,count_science=sc,count_arts=ac,count_commerce=cc,count_diploma=dc)   
         countResult.save()
+        total = sc + ac + cc + dc
+        perS = int((sc/total) * 100)
+        perA = int((ac/total) * 100)
+        perC = int((cc/total) * 100)
+        perD = int((dc/total) * 100)
         print(ac,cc,sc,dc)
         res = max(ac,cc,sc,dc)
         print(username)
         print(User.email) 
         # print(x)
         # print(y)
-        foo = response.content.decode('utf-8')
+        # foo = response.content.decode('utf-8')
         type = ["Science","Commerce","Arts","Diploma"]
         marks = [sc, cc, ac, dc]
-        plt.bar(type, marks, color = ["red","blue","yellow","green"], width = 0.5)
+        # plt.bar(type, marks, color = ["#00fff8","#41b6be","#0c95f3","#275cd8"], width = 0.5)
+        plt.bar(type, marks, color = ["#7594f3","#2557ed",  "#00ecff","#092169"], width = 0.5)
         plt.title("SCORE CARD!")
         plt.xlabel("Stream")
         plt.ylabel("Marks")
         plt.show()
            
-    # return render(request, "after10result.html", {'flag': flag,'sc':sc,'cc':cc,'ac':ac,'dc':dc, 'res' : res, })
+    return render(request, "after10result.html", {'flag': flag,'sc':sc,'cc':cc,'ac':ac,'dc':dc, 'res' : res,'total':total,'perS':perS,'perA':perA,'perC':perC,'perD':perD, })
     # response = response.iloc[1:]
     return response
     
