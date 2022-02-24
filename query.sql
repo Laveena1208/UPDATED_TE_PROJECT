@@ -75,3 +75,25 @@ INSERT INTO  `users_after12artscolleges`(`id`,`college_name`, `college_address`,
 (NULL, 'KJ Somaiya College of Arts and Commerce', 'Mahul Rd, Vidyanagar, Vidyavihar, Ghatkopar (E), Mumbai- 400077', '022-21022915', 'https://kjsac.somaiya.edu.in/en')
 
 
+Insert into `users_after12arts`(`id`, `question`,`question_type`,`correct_answer`,`op1`,`op2`,`op3`,`op4`)values
+(1, 'Semi-indirect lighting scheme is used in which area?','I','Decoration Purpose','High Ceiling','Workshop','Street Light','Decoration Purpose'),
+(2,'A large part of business and financial news is','J','Advocacy','Advocacy','Entertainment','Moralistic','Ideological'),
+(3,'_____ is a smooth, heavy and shiny, long honored bridal fibre','F','Satin','Satin','Tulle','Crepe','Chantilly'),
+(4,'Total rooms sales divided by the number of rooms sold represents :','H','Average daily rate','Rack rate','Room occupancy percentage','Daily report','Average daily rate'),
+(5,'These types of doors permit the free ventilation through them and at the same time maintain privacy.','I','Louvered doors','Louvered doors','Revolving','Single shutter','Collapsible'),
+(6,'Personality Journalism is the other name for:','J','Celebrity Journalism','Political Journalism','Development Journalism','Parachute Journalism','Celebrity Journalism'),
+(7,'The hem falls right above the ankles.','F','Ballerina','Mini','Floor','Ballerina','Street'),
+(8,'Rooms Division includes which one of the following?','H','All of the above','Security','Guest services','Housekeeping','All of the above'),
+(9,'More than 80% of all carpets are manufactured by technique.','I','Tufting','Weaving','Tufting','Bonded','Backing'),
+(10,'The main objective of national advertising is to establish_____of the product in the customers mind.','J','The value','The distributor','The reach','The value','The ethicality'),
+(11,'_____ is the thicker fabric ribbing the weave','F','Taffeta','Tulle','Taffeta','Laces','Valvet'),
+(12,'To which department does the concierge report?
+','H','Front office','Human resources','Front office','Security','Accounting'),
+(13,'The unit for measuring brightness or luminance is','I','Foot lamberts','Lumens', 'Foot lamberts','Foot candles','Illuminations'),
+(14,'The media that has been facing decline in advertising revenue in the western world is:','J','Newspaper industry ','Newspaper industry','Radio','Television','Google'),
+(15,'A sleeve cut wide at the armhole and tapering to the wrist is _____','F','Dolman sleeve','Dolman sleeve','Puff sleeve','Plain sleeve','Tulip sleeve'),
+(16,'Hotels add a charge to all long distance calls made by the guest. This charge is typically :','H','50%','20%','50%','30%','40%'),
+(17, 'Warm color Combinations','I','Red and Yellow','Red and Yellow','Blue and Green','Orange and Yellow','White and Black'),
+(18,'In the commercial world, public relations and advertising are associated with:','J','Marketing','Propaganda','Marketing','Diplomacy','Secret Service'),
+(19,'_____ hugs the tight against the body with hook,snap or laced back securing.','F','Corset','Midriff','Empire','Surplice','Corset'),
+(20,'Housekeeping attendants typically clean and service how many rooms per shift?','H','15 - 20','12 - 14','8 - 10','6 - 8','15 - 20');

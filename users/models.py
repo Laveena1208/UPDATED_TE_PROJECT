@@ -39,7 +39,14 @@ class After10(models.Model):
     correct_answer = models.CharField(max_length = 120,default=" ")
 
 class After12Arts(models.Model):
-    question=models.CharField(max_length=150,unique=True)
+    id = models.AutoField
+    question=models.CharField(max_length=900,unique=True)
+    question_type = models.CharField(max_length = 120,default=" ")
+    op1 = models.CharField(max_length=900,null=True)
+    op2 = models.CharField(max_length=900,null=True)
+    op3 = models.CharField(max_length=900,null=True)
+    op4 = models.CharField(max_length=900,null=True)
+    correct_answer = models.CharField(max_length = 120,default=" ")
 
 class After12Commerce(models.Model):
     question=models.CharField(max_length=150,unique=True)
@@ -114,21 +121,8 @@ class Result10Count(models.Model):
         return self.username
 
 class result12arts(models.Model):
-    ans_CATEGORIES =(
-        ('Dislike' , 'Dislike'),
-        ('Neutral' , 'Neutral'),
-        ('Enjoy' , 'Enjoy'),
-       )
-    result_id = models.AutoField
-    # users=models.ForeignKey('User',null=True, on_delete=models.CASCADE,)
-    # user_id = models.IntegerField()
-    # user = User.email.EmailField(unique = True, blank=True)
-    username = models.EmailField(unique = False, blank=True)
-    question=models.CharField(max_length=1000,  default="")
-    answer = models.CharField(max_length=9,choices=ans_CATEGORIES)
-
-    def __str__(self):
-        return self.username
+    pass
+    
     
 class result12comm(models.Model):
     ans_CATEGORIES =(
