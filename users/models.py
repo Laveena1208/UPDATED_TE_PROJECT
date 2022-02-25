@@ -117,12 +117,25 @@ class Result10Count(models.Model):
     count_commerce=models.CharField(max_length=10)
     count_diploma = models.CharField(max_length=10,default=" ")
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.username
 
 class result12arts(models.Model):
-    pass
+    result_id = models.AutoField
+    username = models.EmailField(unique = False, blank=True)
+    question=models.CharField(max_length=255,  default="")
+    answer = models.CharField(max_length=255,default="")
+    question_type = models.CharField(max_length=50,default = "")
     
+class Result12artsCount(models.Model):
+    username=models.CharField(max_length=100)
+    count_ID=models.CharField(max_length=10)
+    count_Journalism=models.CharField(max_length=10)
+    count_Fashion=models.CharField(max_length=10)
+    count_Hotel = models.CharField(max_length=10,default=" ")
+
+    def __str__(self):
+        return self.username
     
 class result12comm(models.Model):
     ans_CATEGORIES =(
