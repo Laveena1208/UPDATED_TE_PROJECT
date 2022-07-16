@@ -19,6 +19,53 @@ Insert into `users_after10`(`id`, `question`,`question_type`,`correct_answer`,`o
  
 (17,'The major source of fresh water in India is','D','ground water','rainfall','ground water','atmospheric water','ocean water');
 
+
+Insert into `users_after12commerce`(`id`, `question`,`question_type`,`correct_answer`,`op1`,`op2`,`op3`,`op4`)values
+(1, 'What are the major new economic policies?','B','All of the above','Liberalization','Privatization','Globalization','All of the above'),
+(2,' Interpretation of financial statements includes','F','All of the above','Criticism and Analysis','Comparison and Trend Study','Drawing Conclusion','All of the above'),
+(3, 'Which of the following is not a tangible asset?','M','Trademarks','Machinery','Trademarks','Factories','Offices'),
+(4,'In the receipts and payments account, which one is shown?','C',' Depreciation','Outstanding salary',' Depreciation','Life Membership Fees','Accrued Subscription'),
+(5, 'The capital that is consumed by economy or a firm in the production process is known as','B','Depreciation','Capital loss','Production cost','Dead-weight loss','Depreciation'),
+(6,'Trend ratios and trend percentage are used in','F','Horizontal analysis','Dynamic analysis','Horizontal analysis','Vertical analysis','Static analysis'),
+(7, 'Which of the following describes the nature of management principles?','M','All of the above','Universal applicability','General guidelines','Flexibility','All of the above'),
+(8, 'In case of partnership the act of any partner is ','C','Binding on all partners','Binding on all partners','Binding on that partner only','Binding on all partners except that particular partner','None of the above'),
+(9, 'Who propounded the opportunity cost theory of international trade?','B','Haberler','Ricardo','Marshall','Heckscher and Ohlin','Haberler'),
+(10,'The analysis of a financial statement by a shareholder is an example of?','F','External Analysis','External Analysis','Horizontal Analysis','Dynamic Analysis','Static analysis'),
+(11, 'This decision relates to how the firm’s funds are invested in different assets,','M','Investment decision','Investment decision','Financing decision','Dividend decision','None of the above'),
+(12, 'Which of the following is included while computing the value of supply of goods under GST? ','C','All of the above','Price of the goods ','Packing charges of the goods ','Tax levied by Municipal Authority on sale of the goods','All of the above'),
+(13, 'The cost of one thing in terms of alternatives given up is called as?','B','Opportunity cost','Opportunity cost','Production cost','Physical cost','Real cost'),
+(14,' Which of the following is not a financial market function?','F','Floating of companies','Price determination of securities','Mobilization of savings','Floating of companies','Lowering transaction cost'),
+(15, 'Purchasing a new machine to replace an existing one is an example of','M','Capital budgeting decision','Financing decision','Dividend decision','Working capital decision','Capital budgeting decision'),
+(16, 'Current ratio is equal to : ','C','Current Assets/ Current Liabilities','Current Liabilities / Current Assets ','Current Assets/ Current Liabilities ','Current Liabilities - Current Assets','None of the above'),
+(17, 'A mixed economy is characterized by the coexistence of?','B','Public and private sectors','Modern and traditional industriest','Public and private sectors','Foreign and domestic investments','Commercial and subsistence farming'),
+(18,' Which of the following is a financial instrument','F','Treasury bill','Unit of mutual funds',' Debenture','Treasury bill','Bond'),
+(19, 'The size of assets, the profitability and competitiveness are all affected by','M','Capital budgeting decision','Working capital decision','Capital budgeting decision','Financing decision','Dividend decision'),
+(20,'Current ratio is equal to :','C','Current Assets/ Current Liabilities',' Current Liabilities / Current Asset','Current Assets/ Current Liabilities','Current Liabilities - Current Assets','None of the above');
+
+
+Insert into `users_after12science`(`id`, `question`,`question_type`,`correct_answer`,`op1`,`op2`,`op3`,`op4`)values
+(1, 'Which of the following is/are the levels of implementation of data structure?','E','All of the above','Abstract level','Application Level','Implementation level','All of the above'),
+(2, 'Which is the main language used by the aviation industry?','A','English','French','German','English','Hindi'),
+(3, 'Helper cells belong to?','M','T cells','T cells','Macrophages','B cells','Monocytes'),
+(4, 'Who was the author of the book named "Methods in Social Research"?','BR','Goode and Hatt','Kerlinger','CR Kothari','Goode and Hatt','Wilkinson'),
+(5, 'The stopping sight distance depends upon?','E','All of the above','Total reaction time of driver','Speed of vehicle','Efficiency of brakes','All of the above'),
+(6, "In Which year, the world's first air-to-ground voice transmission took place?",'A','1915','1915','1916','1917','1918'),
+(7, 'Screening test is not useful when?','M','Incidence is low in the community','Incidence of the disease','Incidence is low in the community','Early detection leads to favorable outcome','The disease has a lead time'),
+(8, 'What is the major attribute of Correlation Analysis?','BR','Association among variables','Association among variables','Difference among variables','Regression among variables','Variations among variables'),
+(9, 'Which of the following deals with the study of rates at which chemical reactions occur and the effect of various parameters on the rate?','E','Chemical Kinetics','Fluid Mechanics','Chemical Technology','Chemical Sciences','Chemical Kinetics'),
+(10, 'A lack of a pilot read-back contributed to __________ of the errors found in this analysis.','A','0.25','0.15','0.2','0.25','0.3'),
+(11, 'With urine turning green on ferric chloride test,the diagnosis is:','M','Phenylketonuria','Phenylketonuria','Alkaptonuria','Multiple carboxylase deficiency','Glutaric aciduria'),
+(12, 'What is the name of the conceptual framework in which the research is carried out?','BR','Research design','Research hypothesis','Synopsis of Research','Research paradigm','Research design'),
+(13, 'Which of the following is not the feature of a modern control system?','E','No oscillation','Correct power level','No oscillation','Quick response','Accuracy'),
+(14, 'Miscommunication is caused by mis-hearing by the pilots for?','A','0.28','0.07','0.18','0.28','0.45'),
+(15, 'Nerve not related to humerus is?','M','Musculocutaneous','Radial','Median','Axillary','Musculocutaneous'),
+(16, 'What is the main role of research in education?','BR','To help an applicant in becoming a renowned educationalist.',"To upsurge one's social status.","To increase one's job prospects.","To augment one's personal growth.",'To help an applicant in becoming a renowned educationalist.'),
+(17, 'In which type of chromatography, the stationary phase held in a narrow tube and the mobile phase is forced through it under pressure?','E','Column chromatography','Column chromatography','Planar chromatography','Liquid chromatography','Gas chromatography'),
+(18, 'Who invented the first American air-to-ground radio transmitter?','A','AT&T Labs','Los Alamos','AT&T Labs','CERN','Bell Labs'),
+(19, 'Medical treatment for BHP includes?','M','Finesteride','Finesteride','Methyl testosterone','Oestrogens','Osmic acid'),
+(20, 'Which of the following features are considered as critical in qualitative research?','BR','Collecting data with bottom-up empirical evidence.','Collecting data with the help of standardized research tools.','Design sampling with probability sample techniques.','Collecting data with bottom-up empirical evidence.','athering data with top-down schematic evidence.');
+
+
 INSERT INTO  `users_after10colleges`(`id`,`college_name`, `college_address`, `phone_number`,`website`) VALUES
 (NULL,'ST. XAVIERS COLLEGE FORT MUMBAI', 'Mahapalika Marg, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001' , '022 2262 0661', 'https://xaviers.edu/main/'),
 (NULL, 'B K BIRLA COLLEGE KALYAN','Birla College Campus Rd, Gauripada, Kalyan, Maharashtra 421301', '0251 223 1294','https://www.bkbirlacollegekalyan.com/'),
@@ -75,25 +122,3 @@ INSERT INTO  `users_after12artscolleges`(`id`,`college_name`, `college_address`,
 (NULL, 'KJ Somaiya College of Arts and Commerce', 'Mahul Rd, Vidyanagar, Vidyavihar, Ghatkopar (E), Mumbai- 400077', '022-21022915', 'https://kjsac.somaiya.edu.in/en')
 
 
-Insert into `users_after12arts`(`id`, `question`,`question_type`,`correct_answer`,`op1`,`op2`,`op3`,`op4`)values
-(1, 'Semi-indirect lighting scheme is used in which area?','I','Decoration Purpose','High Ceiling','Workshop','Street Light','Decoration Purpose'),
-(2,'A large part of business and financial news is','J','Advocacy','Advocacy','Entertainment','Moralistic','Ideological'),
-(3,'_____ is a smooth, heavy and shiny, long honored bridal fibre','F','Satin','Satin','Tulle','Crepe','Chantilly'),
-(4,'Total rooms sales divided by the number of rooms sold represents :','H','Average daily rate','Rack rate','Room occupancy percentage','Daily report','Average daily rate'),
-(5,'These types of doors permit the free ventilation through them and at the same time maintain privacy.','I','Louvered doors','Louvered doors','Revolving','Single shutter','Collapsible'),
-(6,'Personality Journalism is the other name for:','J','Celebrity Journalism','Political Journalism','Development Journalism','Parachute Journalism','Celebrity Journalism'),
-(7,'The hem falls right above the ankles.','F','Ballerina','Mini','Floor','Ballerina','Street'),
-(8,'Rooms Division includes which one of the following?','H','All of the above','Security','Guest services','Housekeeping','All of the above'),
-(9,'More than 80% of all carpets are manufactured by technique.','I','Tufting','Weaving','Tufting','Bonded','Backing'),
-(10,'The main objective of national advertising is to establish_____of the product in the customers mind.','J','The value','The distributor','The reach','The value','The ethicality'),
-(11,'_____ is the thicker fabric ribbing the weave','F','Taffeta','Tulle','Taffeta','Laces','Valvet'),
-(12,'To which department does the concierge report?
-','H','Front office','Human resources','Front office','Security','Accounting'),
-(13,'The unit for measuring brightness or luminance is','I','Foot lamberts','Lumens', 'Foot lamberts','Foot candles','Illuminations'),
-(14,'The media that has been facing decline in advertising revenue in the western world is:','J','Newspaper industry ','Newspaper industry','Radio','Television','Google'),
-(15,'A sleeve cut wide at the armhole and tapering to the wrist is _____','F','Dolman sleeve','Dolman sleeve','Puff sleeve','Plain sleeve','Tulip sleeve'),
-(16,'Hotels add a charge to all long distance calls made by the guest. This charge is typically :','H','50%','20%','50%','30%','40%'),
-(17, 'Warm color Combinations','I','Red and Yellow','Red and Yellow','Blue and Green','Orange and Yellow','White and Black'),
-(18,'In the commercial world, public relations and advertising are associated with:','J','Marketing','Propaganda','Marketing','Diplomacy','Secret Service'),
-(19,'_____ hugs the tight against the body with hook,snap or laced back securing.','F','Corset','Midriff','Empire','Surplice','Corset'),
-(20,'Housekeeping attendants typically clean and service how many rooms per shift?','H','15 - 20','12 - 14','8 - 10','6 - 8','15 - 20');

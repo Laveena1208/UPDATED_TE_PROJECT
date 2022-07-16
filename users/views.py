@@ -3,7 +3,9 @@ from itertools import count
 from turtle import color
 from django.shortcuts import redirect, render,HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .models import Result10Count, User
+
+import users
+from .models import Result10Count, Result12commerceCount, Result12scienceCount, User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from users.models import After10, After12Arts, After12Commerce, After12Science ,After10colleges, After12engcolleges, After12medicolleges,After12commcolleges,After12artscolleges,result,result12arts,result12comm,result12sci,Result12artsCount
@@ -16,6 +18,9 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split 
 from sklearn.linear_model import LinearRegression
+from .process import html_to_pdf 
+from django.conf import settings
+from django.core.mail import send_mail,EmailMessage
 
 # Create your views here.
 
@@ -153,11 +158,23 @@ def after10result(request):
         plt.xlabel("Stream")
         plt.ylabel("Marks")
         plt.show()
-           
+        
+        # subject = 'From Skhisha: A career Guide'
+        # message = f'Hey {User.email}, thank you for the test, hope you enjoyed!'
+        # message.attach(getpdf())
+        # email_from = settings.EMAIL_HOST_USER
+        # recipient_list = [users.email, ]
+        # send_mail( subject, message, email_from, recipient_list )
+
+        # pdf = html_to_pdf('after10result.html')
+        # myPDF= HttpResponse(pdf, content_type='application/pdf')  
     return render(request, "after10result.html", {'flag': flag,'sc':sc,'cc':cc,'ac':ac,'dc':dc, 'res' : res,'total':total,'perS':perS,'perA':perA,'perC':perC,'perD':perD, })
     # response = response.iloc[1:]
     return response
-    
+
+def getpdf(request):
+    pdf = html_to_pdf('after10result.html')
+    return HttpResponse(pdf, content_type='application/pdf')  
 
 
 def get_questions12arts():
@@ -192,7 +209,7 @@ def after12artsresult(request):
             print(q_id, option_selected,type)
             print(question.correct_answer == option_selected)
             if(q_id != None and option_selected!= None):
-                ans = result(question = q_id,answer = option_selected,username = username,question_type=type, )
+                ans = result12arts(question = q_id,answer = option_selected,username = username,question_type=type, )
                 option_selected=(option_selected)
                 writer.writerow([q_id, option_selected, username, type,question.correct_answer == option_selected])
                 if (question.correct_answer == option_selected and type == 'I'):
@@ -241,20 +258,57 @@ def after12commresult(request):
         questions=get_questions12comm();
         form=request.POST.get("after12form")
         username = User.email
+        bcom_c = 0
+        baf_c = 0
+        bms_c = 0
+        ca_c = 0
+        results = pd.DataFrame()
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename=file.csv'
+        results.to_csv(path_or_buf=response,sep=';',float_format='%.2f',index=False,decimal=",")
+        writer = csv.writer(response)  
+        writer.writerow(['question', 'answer', 'username', 'question_type','marks'])
         for question in questions:
-            #print(question.id)
-            # user_id = result.objects.get(user_id = user_id)
-            # ip = User.objects.get() # query the InsertIp object
-            # user = User.user # get the user using a . operator
             q_id=question.id
             option_selected=request.POST.get(str(q_id))
-            print(q_id, option_selected)
+            type=question.question_type
+            print(q_id, option_selected,type)
+            print(question.correct_answer == option_selected)
             if(q_id != None and option_selected!= None):
-                ans = result12comm(question = q_id,answer = option_selected,username = username )
+                ans = result12comm(question = q_id,answer = option_selected,username = username,question_type=type, )
+                option_selected=(option_selected)
+                writer.writerow([q_id, option_selected, username, type,question.correct_answer == option_selected])
+                if (question.correct_answer == option_selected and type == 'B'):
+                    bcom_c +=1
+                elif (question.correct_answer == option_selected and type == 'F'):
+                    baf_c +=1
+                elif (question.correct_answer == option_selected and type == 'M'):
+                    bms_c +=1
+                elif (question.correct_answer == option_selected and type == 'C'):
+                    ca_c +=1
                 ans.save()
-                flag=True   
-        print(username)      
-    return render(request, "after12commresult.html", {'flag': flag})
+                flag=True
+        countResult=Result12commerceCount(username=username,count_BCOM=bcom_c,count_BAF=baf_c,count_BMS =bms_c,count_CA=ca_c)   
+        countResult.save()
+        total = bcom_c+baf_c+bms_c+ca_c
+        perB = int((bcom_c/total) * 100)
+        perF = int((baf_c/total) * 100)
+        perM = int((bms_c/total) * 100)
+        perC = int((ca_c/total) * 100)
+        print(bcom_c,baf_c,bms_c,ca_c)
+        res = max(bcom_c,baf_c,bms_c,ca_c)
+        print(username)
+        print(User.email) 
+        type = ["B.COM","BAF","BMS","CA"]
+        marks = [bcom_c,baf_c,bms_c,ca_c]
+        plt.bar(type, marks, color = ["#7594f3","#2557ed",  "#00ecff","#092169"], width = 0.5)
+        plt.title("SCORE CARD!")
+        plt.xlabel("Stream")
+        plt.ylabel("Marks")
+        plt.show()
+           
+    return render(request, "after12commresult.html", {'flag': flag,'bc':bcom_c,'fc':baf_c,'mc':bms_c,'cc':ca_c, 'res' : res,'total':total,'perB':perB,'perF':perF,'perM':perM,'perC':perC, })
+    return response
     
 def get_questions12sci():
     questions=After12Science.objects.all();
@@ -271,20 +325,57 @@ def after12sciresult(request):
         questions=get_questions12sci();
         form=request.POST.get("after12form")
         username = User.email
+        engg_c = 0
+        avi_c = 0
+        mbbs_c = 0
+        bsc_c = 0
+        results = pd.DataFrame()
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename=file.csv'
+        results.to_csv(path_or_buf=response,sep=';',float_format='%.2f',index=False,decimal=",")
+        writer = csv.writer(response)  
+        writer.writerow(['question', 'answer', 'username', 'question_type','marks'])
         for question in questions:
-            #print(question.id)
-            # user_id = result.objects.get(user_id = user_id)
-            # ip = User.objects.get() # query the InsertIp object
-            # user = User.user # get the user using a . operator
             q_id=question.id
             option_selected=request.POST.get(str(q_id))
-            print(q_id, option_selected)
+            type=question.question_type
+            print(q_id, option_selected,type)
+            print(question.correct_answer == option_selected)
             if(q_id != None and option_selected!= None):
-                ans = result12sci(question = q_id,answer = option_selected,username = username )
+                ans = result12sci(question = q_id,answer = option_selected,username = username,question_type=type, )
+                option_selected=(option_selected)
+                writer.writerow([q_id, option_selected, username, type,question.correct_answer == option_selected])
+                if (question.correct_answer == option_selected and type == 'E'):
+                    engg_c +=1
+                elif (question.correct_answer == option_selected and type == 'A'):
+                    avi_c +=1
+                elif (question.correct_answer == option_selected and type == 'M'):
+                    mbbs_c +=1
+                elif (question.correct_answer == option_selected and type == 'BR'):
+                    bsc_c +=1
                 ans.save()
-                flag=True   
-        print(username)      
-    return render(request, "after12sciresult.html", {'flag': flag})
+                flag=True
+        countResult=Result12scienceCount(username=username,count_engg=engg_c,count_avi=avi_c,count_mbbs =mbbs_c,count_bsc=bsc_c)   
+        countResult.save()
+        total = engg_c+avi_c+mbbs_c+bsc_c
+        perE = int((engg_c/total) * 100)
+        perA = int((avi_c/total) * 100)
+        perM = int((mbbs_c/total) * 100)
+        perB = int((bsc_c/total) * 100)
+        print(engg_c,avi_c,mbbs_c,bsc_c)
+        res = max(engg_c,avi_c,mbbs_c,bsc_c)
+        print(username)
+        print(User.email) 
+        type = ["ENGG","AVIATION","MBBS","BSC & RESEARCH"]
+        marks = [engg_c,avi_c,mbbs_c,bsc_c]
+        plt.bar(type, marks, color = ["#7594f3","#2557ed",  "#00ecff","#092169"], width = 0.5)
+        plt.title("SCORE CARD!")
+        plt.xlabel("Stream")
+        plt.ylabel("Marks")
+        plt.show()
+           
+    return render(request, "after12sciresult.html", {'flag': flag,'ec':engg_c,'ac':avi_c,'mc':mbbs_c,'bc':bsc_c, 'res' : res,'total':total,'perB':perB,'perE':perE,'perM':perM,'perA':perA, })
+    return response
     
 def about(request):
     return render(request, "about.html")
@@ -329,4 +420,3 @@ def after12artscolleges(request):
         'colleges':colleges
     }
     return render(request, 'after12artscolleges.html',context)
-
