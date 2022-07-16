@@ -19,17 +19,17 @@ A Career Guidance System where students can see various career opportunities ,th
 ## Architecture of the application
 
 <div>
-<img src="" width="900" height="500" />
+<img src="https://github.com/Laveena1208/UPDATED_TE_PROJECT/blob/main/Screenshots/architecture.JPG" width="900" height="500" />
 </div>
 
 ## Some Screenshots of Application
 
 <div>
-<img src="" width="500" height="300" />
-<img src="" width="500" height="300" />
-<img src="" width="500" height="300" />
-<img src="" width="500" height="300" />
-<img src="" width="500" height="300" />
+<img src="https://github.com/Laveena1208/UPDATED_TE_PROJECT/blob/main/Screenshots/Screenshot3.png" width="500" height="300" />
+<img src="https://github.com/Laveena1208/UPDATED_TE_PROJECT/blob/main/Screenshots/Screenshot2.png" width="500" height="300" />
+<img src="https://github.com/Laveena1208/UPDATED_TE_PROJECT/blob/main/Screenshots/graph.JPG" width="500" height="300" />
+<img src="https://github.com/Laveena1208/UPDATED_TE_PROJECT/blob/main/Screenshots/Screenshot1.png" width="500" height="300" />
+<img src="https://github.com/Laveena1208/UPDATED_TE_PROJECT/blob/main/Screenshots/Screenshot4.png" width="500" height="300" />
 </div>
 
 ## Authors
